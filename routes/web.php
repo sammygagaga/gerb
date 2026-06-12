@@ -11,14 +11,15 @@ use App\Livewire\RegisterUserComponent;
 Route::get('/', LoginUserComponent::class);
 Route::get('/register', RegisterUserComponent::class)->name('register');
 
-
 Route::prefix('/wire')
     ->middleware(AuthMiddleware::class)
     ->group(function (){
      Route::get('/all', AllProducts::class);
 });
 
-Route::controller(UserController::class)->group(function (){
+Route::controller(UserController::class)
+    ->middleware(AuthMiddleware::class)
+    ->group(function (){
     Route::get('/logout', 'logout')->name('users.logout');
 });
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Table;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Sluggable\Attributes\Sluggable;
 
@@ -12,6 +13,8 @@ use Spatie\Sluggable\Attributes\Sluggable;
 #[Sluggable(from: 'title', to: 'slug')]
 class Product extends Model
 {
+    use HasFactory;
+
     public function getRouteKeyName()
     {
         return 'slug';
