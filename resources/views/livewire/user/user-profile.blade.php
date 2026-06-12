@@ -1,10 +1,20 @@
 <?php
 
 use Livewire\Component;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
 
 new class extends Component
 {
-    //
+    public function logout()
+    {
+        Auth::logout();
+
+        session()->invalidate();
+        session()->regenerateToken();
+
+        return redirect('/wire/all');
+    }
 };
 ?>
 
@@ -20,8 +30,9 @@ new class extends Component
             <div class="flex space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                 <p class="rounded-md px-3 py-2 text-sm font-medium text-green">{{ auth()->user()->name }}</p>
-                <a wire:navigate href="{{ route('users.logout') }}"
-                   class="rounded-md bg-red-500 hover:bg-red-600 px-3 py-2 text-sm font-medium text-white">Выйти</a>
+                <button wire:navigate wire:click="logout"
+                   class="rounded-md bg-red-500 hover:bg-red-600 px-3 py-2 text-sm font-medium text-white">Выйти
+                </button>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <div>
-    <livewire:user-profile></livewire:user-profile>
+    <livewire:user.user-profile ></livewire:user.user-profile>
 
 {{--    @if(session('status'))--}}
 {{--        --}}
