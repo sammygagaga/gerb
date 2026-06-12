@@ -63,7 +63,7 @@
                     </button>
                 </form>
 
-                <form wire:submit="delete({{$product->id}})" wire:confirm="Вы действительно хотите удалить продукт?">
+                <form wire:submit="delete" wire:confirm="Вы действительно хотите удалить продукт?">
                     <button type="submit" class="px-6 py-3 border border-gray-300 text-gray-600 font-semibold rounded-xl hover:bg-gray-50 transition transform hover:-translate-y-0.5">
                         Удалить
                     </button>

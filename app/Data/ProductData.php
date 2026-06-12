@@ -7,10 +7,11 @@ use Spatie\LaravelData\Attributes\Validation\BooleanType;
 use Spatie\LaravelData\Attributes\Validation\Max;
 use Spatie\LaravelData\Attributes\Validation\Min;
 use Spatie\LaravelData\Attributes\Validation\Nullable;
+use Spatie\LaravelData\Attributes\Validation\Required;
 use Spatie\LaravelData\Attributes\Validation\StringType;
 use Spatie\LaravelData\Concerns\WireableData;
 use Spatie\LaravelData\Data;
-use Symfony\Contracts\Service\Attribute\Required;
+
 
 class ProductData extends Data implements Wireable
 {

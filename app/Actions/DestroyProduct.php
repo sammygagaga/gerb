@@ -9,14 +9,14 @@ class DestroyProduct
 {
     use AsAction;
 
-    public function handle($data)
+    public function handle($productId)
     {
-        $this->deleteProduct($data);
+        $this->deleteProduct($productId);
     }
 
-    private function deleteProduct($data):void
+    private function deleteProduct($productId):void
     {
-        Product::destroy($data['id']);
+        Product::destroy($productId);
     }
 
 }
