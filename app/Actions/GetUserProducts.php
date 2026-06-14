@@ -10,13 +10,13 @@ class GetUserProducts
 {
     use AsAction;
 
-    public function handle()
+    public function handle($userID)
     {
-        return $this->getProducts();
+        return $this->getProducts($userID);
     }
 
-    private function getProducts(): Collection
+    private function getProducts($userID): Collection
     {
-        return User::find(auth()->id())->products;
+        return User::find($userID)->products;
     }
 }

@@ -9,10 +9,17 @@ use Livewire\Component;
 
 class AllProducts extends Component
 {
+    public int $userID = 0;
+
+    public function mount(): void
+    {
+        $this->userID = auth()->id();
+    }
+
     #[Computed]
     public function products()
     {
-        return GetUserProducts::run();
+        return GetUserProducts::run($this->userID);
     }
 
     public function render()

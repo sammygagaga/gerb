@@ -14,7 +14,7 @@
 
         <livewire:create-product-component></livewire:create-product-component>
 
-        <!-- Основной контент с двумя колонками -->
+        <!-- Основной контент с двумя колонками  -->
         <livewire:product.columns-product :products="$products"></livewire:product.columns-product>
 
     </div>
