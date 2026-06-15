@@ -16,7 +16,9 @@ class RegisterUserComponent extends Component
 
         $data = $this->form->only(['user_name', 'password', 'email']);
 
-        CreateNewUser::run($data);
+        $user = CreateNewUser::run($data);
+
+        $user->sendEmailVerificationNotification();
 
         session()->flash('success', 'Пользовать успешно создан');
 

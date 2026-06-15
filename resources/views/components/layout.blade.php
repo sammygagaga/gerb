@@ -9,7 +9,7 @@
 
 </head>
     <body class="bg-gray-100 min-h-screen">
-    <x-users-profile></x-users-profile>
+
     {{$slot}}
 
     </body>

@@ -11,7 +11,7 @@ class CreateNewUser
 
     public function handle($data)
     {
-        $this->createUser($data);
+        return $this->createUser($data);
     }
 
     private function createUser($data): User

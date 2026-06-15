@@ -13,7 +13,7 @@ new class extends Component
         session()->invalidate();
         session()->regenerateToken();
 
-        return redirect('/wire/all');
+        return redirect('/');
     }
 };
 ?>
