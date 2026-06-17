@@ -3,42 +3,38 @@
 namespace App\Livewire;
 
 use App\Actions\CreateNewUser;
-use App\Livewire\Forms\UserForm;
+use App\Data\UserData;
+
 use Livewire\Component;
 
 class RegisterUserComponent extends Component
 {
-    public UserForm $form;
+
+    public UserData $form;
+
+    public function mount(): void
+    {
+        $this->form = new UserData();
+    }
 
     public function save()
     {
-        $this->form->validate();
+        $this->validate();
 
-        $data = $this->form->only(['user_name', 'password', 'email']);
-
-        $user = CreateNewUser::run($data);
+        $user = CreateNewUser::run(UserData::validateAndCreate($this->form));
 
         $user->sendEmailVerificationNotification();
 
         session()->flash('success', 'Пользовать успешно создан');
 
         $this->redirect('/');
-
     }
 
-    public function updatedEmail(): void
+    protected function rules(): array
     {
-        $this->form->resetValidation('email');
-    }
-
-    public function updatedPassword(): void
-    {
-        $this->form->resetValidation('password',);
-    }
-
-    public function updatedUserName(): void
-    {
-        $this->form->resetValidation('user_name');
+        return collect(UserData::getValidationRules($this->form->toArray()))
+            ->mapWithKeys(fn ($r, $k) => ["form.$k" => $r])
+            ->all();
     }
 
     public function render()

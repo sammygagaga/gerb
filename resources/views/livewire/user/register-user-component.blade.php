@@ -18,7 +18,7 @@
                 </label>
                 <input
                     type="text"
-                    wire:model.live="form.user_name"
+                    wire:model="form.user_name"
                     placeholder="Иван Иванов"
                     class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent transition text-[#2C2D33]"
                     required
@@ -34,7 +34,7 @@
                     Пароль <span class="text-gray-400 font-normal"></span>
                 </label>
                 <input
-                    wire:model.live="form.password"
+                    wire:model="form.password"
                     type="password"
                     class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent transition text-[#2C2D33] resize-none"
                     required
@@ -50,7 +50,7 @@
                     Email <span class="text-gray-400 font-normal"></span>
                 </label>
                 <input
-                    wire:model.live="form.email"
+                    wire:model="form.email"
                     placeholder="aboba@email.com"
                     class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent transition text-[#2C2D33] resize-none"
                     required
@@ -69,7 +69,7 @@
                     <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                     </svg>
-                    Зарегистроваться
+                    Зарегистрироваться
                 </button>
             </div>
 

@@ -4,21 +4,22 @@ namespace App\Livewire\Modals;
 
 
 use App\Actions\CreateNewProduct;
+use App\Data\ProductData;
 use App\Livewire\Forms\ProductForm;
 use LivewireUI\Modal\ModalComponent;
 
 class CreateProduct extends ModalComponent
 {
-    public ProductForm $form;
+    public ProductData $form;
+
+    public function mount(): void
+    {
+        $this->form = new ProductData();
+    }
 
     public function save()
     {
-        $this->validate();
-
-        $data = $this->form->only(['product_name', 'allowed', 'comment']);
-
-        CreateNewProduct::run($data);
-
+        CreateNewProduct::run(ProductData::validateAndCreate($this->form->toArray()));
         session()->flash('status', 'Продукт добавлен!');
 
         return $this->redirect('/wire/all', navigate: true);

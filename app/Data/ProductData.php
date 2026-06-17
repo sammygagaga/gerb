@@ -15,25 +15,23 @@ use Spatie\LaravelData\Data;
 
 class ProductData extends Data implements Wireable
 {
-
     use WireableData;
-
     public function __construct(
 
         #[Required]
         #[Max(255)]
         #[Min(5)]
         #[StringType]
-        public string $product_name,
+        public string $product_name = '',
 
         #[Required]
         #[BooleanType]
-        public bool $allowed,
+        public bool $allowed = false,
 
         #[Nullable]
         #[StringType]
         #[Max(1000)]
-        public ?string $comment,
+        public ?string $comment = '',
 
     ) {}
 
@@ -44,4 +42,5 @@ class ProductData extends Data implements Wireable
             'allowed.required' => 'Выборите категорию',
         ];
     }
+
 }

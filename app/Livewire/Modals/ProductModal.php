@@ -29,7 +29,6 @@ class ProductModal extends ModalComponent
         session()->flash('status', 'Продукт удален!');
 
         return $this->redirect('/wire/all', navigate: true);
-
     }
 
     public function render()
