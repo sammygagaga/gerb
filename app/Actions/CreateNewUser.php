@@ -19,7 +19,7 @@ class CreateNewUser
     {
         $user = new User;
 
-        $user->name = $data->user_name;
+        $user->name = $data->name;
         $user->password = bcrypt($data->password);
         $user->email = $data->email;
 

@@ -5,7 +5,6 @@ namespace App\Livewire\Modals;
 
 use App\Actions\CreateNewProduct;
 use App\Data\ProductData;
-use App\Livewire\Forms\ProductForm;
 use LivewireUI\Modal\ModalComponent;
 
 class CreateProduct extends ModalComponent

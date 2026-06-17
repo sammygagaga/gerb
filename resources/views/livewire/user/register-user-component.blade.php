@@ -13,17 +13,17 @@
             @csrf
             <!-- Имя пользователя -->
             <div>
-                <label for="user_name" class="block text-sm font-semibold text-[#2C2D33] mb-2">
+                <label for="name" class="block text-sm font-semibold text-[#2C2D33] mb-2">
                     Имя
                 </label>
                 <input
                     type="text"
-                    wire:model="form.user_name"
+                    wire:model="form.name"
                     placeholder="Иван Иванов"
                     class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#00A651] focus:border-transparent transition text-[#2C2D33]"
                     required
                 >
-                @error('form.user_name')
+                @error('form.name')
                 {{ $message }}
                 @enderror
             </div>

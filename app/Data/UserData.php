@@ -28,7 +28,7 @@ class UserData extends Data implements Wireable
         #[Max(255)]
         #[Min(3)]
         #[StringType]
-        public string $user_name = '',
+        public string $name = '',
 
         #[Required]
         #[Password]

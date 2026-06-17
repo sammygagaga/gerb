@@ -29,7 +29,9 @@ new class extends Component
 
             <div class="flex space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                <p class="rounded-md px-3 py-2 text-sm font-medium text-green">{{ auth()->user()->name }}</p>
+                <button wire:click="$dispatch('openModal', { component: 'modals.user-modal', arguments: {user: '{{ auth()->user()->id }}'} })"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-green">{{ auth()->user()->name }}
+                </button>
                 <button wire:navigate wire:click="logout"
                    class="rounded-md bg-red-500 hover:bg-red-600 px-3 py-2 text-sm font-medium text-white">Выйти
                 </button>

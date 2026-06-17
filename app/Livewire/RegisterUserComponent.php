@@ -9,7 +9,6 @@ use Livewire\Component;
 
 class RegisterUserComponent extends Component
 {
-
     public UserData $form;
 
     public function mount(): void
