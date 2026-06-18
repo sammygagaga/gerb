@@ -35,6 +35,8 @@ class UserData extends Data implements Wireable
         #[Max(255)]
         #[Min(8)]
         public string $password = '',
+
+        public int $id = 0
     ) {}
 
     public static function messages(...$args): array
