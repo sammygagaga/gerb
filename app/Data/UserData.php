@@ -4,6 +4,9 @@ namespace App\Data;
 
 
 use Livewire\Wireable;
+use Spatie\LaravelData\Attributes\Validation\BooleanType;
+use Spatie\LaravelData\Attributes\Validation\Date;
+use Spatie\LaravelData\Attributes\Validation\DateFormat;
 use Spatie\LaravelData\Attributes\Validation\Email;
 use Spatie\LaravelData\Attributes\Validation\Max;
 use Spatie\LaravelData\Attributes\Validation\Min;
@@ -35,6 +38,9 @@ class UserData extends Data implements Wireable
         #[Max(255)]
         #[Min(8)]
         public string $password = '',
+
+        #[BooleanType]
+        public $oAuthUser = false,
 
         public int $id = 0
     ) {}

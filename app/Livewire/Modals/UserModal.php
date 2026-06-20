@@ -22,6 +22,7 @@ class UserModal extends ModalComponent
 
     public function mount(User $user): void
     {
+        abort_unless($user->id === auth()->id(), 403);
         $this->form = UserData::from($user);
         $this->form->password = '';
     }

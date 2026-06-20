@@ -9,7 +9,7 @@
         @livewireStyles
         <script src="//cdn.tailwindcss.com"></script>
     </head>
-    <body class="bg-gray-100 min-h-screen">
+    <body class="bg-gray-100 min-h-screen flex flex-col">
 
         {{ $slot }}
 
